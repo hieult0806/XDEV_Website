@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>My project</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+</head>
+
+<body>
+  <!-- <div style="background-image: url(./bg_1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  height: 100vh;
+  position: relative">
+  </div> -->
+  <div id="unity-container" class="unity-desktop" style="
+  background-color: black;
+  box-shadow: 0px 0px 6px 2px rgb(0, 0, 0);">
+    <canvas id="unity-canvas"></canvas>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function onGameStart() {
+      console.log("On Game Start");
+    }
+
+    function onSubmitScore(score) {
+      console.log("On submit Score: " + score);
+    }
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/build.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/build.data",
+      frameworkUrl: buildUrl + "/build.framework.js",
+      codeUrl: buildUrl + "/build.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "My project",
+      productVersion: "1.0",
+    };
+
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    } else {
+      canvas.style.width = "1280px";
+      canvas.style.height = "720px";
+    }
+    loadingBar.style.display = "block";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        loadingBar.style.display = "none";
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+
+</html>
