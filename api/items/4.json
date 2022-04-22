@@ -2,5 +2,6 @@
     "ID": "Item.Fusion.Booster",
     "Name": "Fusion Booster",
     "Level": 5,
-    "Image": "https://xdev.vn/api/items/images/booster_fusion_5.png"
+    "Image": "https://xdev.vn/api/items/images/booster_fusion_5.png",
+    "Description": "This booster will increase the success chance when you start a fusion!"
 }
