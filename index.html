@@ -7,8 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>XDEV Studio — Fun &amp; Relax Games</title>
     <meta name="author" content="XDEV Studio">
-    <meta name="description" content="XDEV Studio is a game studio based in Vietnam, focused on fun and relaxing puzzle games.">
+    <meta name="description" content="XDEV Studio is a game studio based in Vietnam, building fun and relaxing puzzle, casino, and arcade games for mobile.">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://xdev.vn/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="XDEV Studio">
+    <meta property="og:title" content="XDEV Studio — Fun &amp; Relax Games">
+    <meta property="og:description" content="A Vietnam-based game studio building fun, relaxing puzzle and casual games for mobile.">
+    <meta property="og:url" content="https://xdev.vn/">
+    <meta property="og:image" content="https://xdev.vn/Image/Company-Logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XDEV Studio — Fun &amp; Relax Games">
+    <meta name="twitter:description" content="A Vietnam-based game studio building fun, relaxing puzzle and casual games for mobile.">
+    <meta name="twitter:image" content="https://xdev.vn/Image/Company-Logo.png">
+
     <link rel="shortcut icon" href="./Image/Company-Logo.png">
+    <link rel="apple-touch-icon" href="./Image/Company-Logo.png">
     <link rel="stylesheet" href="./css/modern-theme.css">
 </head>
 
@@ -56,10 +74,13 @@
             </div>
         </section>
 
-        <!-- Games Showcase (Replaces old Slider) -->
-        <section id="games" class="games-section">
+        <!-- Games Showcase -->
+        <section id="games" class="games-section" data-reveal>
             <div class="container">
-                <h2 class="section-title text-center">Our Games</h2>
+                <div class="section-head text-center">
+                    <h2 class="section-title">Our Games</h2>
+                    <p class="section-lede">From puzzle to casino to match-3 — a glimpse at what we're building.</p>
+                </div>
                 <div class="games-grid">
 
                     <a class="game-card-link" href="https://play.google.com/store/apps/details?id=vn.xdev.escape" target="_blank" rel="noopener">
@@ -165,7 +186,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about-section dark-bg">
+        <section id="about" class="about-section dark-bg" data-reveal>
             <div class="container">
                 <div class="about-content glass-panel text-center">
                     <h2 class="section-title">XDEV STUDIO</h2>
@@ -178,12 +199,11 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section" data-reveal>
             <div class="container form-container">
-                <div class="text-center mb-50">
-                    <h2 class="section-title">GET IN TOUCH</h2>
-                    <p class="subtitle">Share your opinion on what we lack so we can improve ourselves and our products.
-                    </p>
+                <div class="section-head text-center">
+                    <h2 class="section-title">Get in touch</h2>
+                    <p class="section-lede">Share what you'd like to see from us — feedback, ideas, or partnerships.</p>
                 </div>
 
                 <form class="glass-panel contact-form" action="#" method="POST">
@@ -221,11 +241,30 @@
         </section>
     </main>
 
-    <footer class="site-footer text-center">
-        <div class="container">
+    <footer class="site-footer">
+        <div class="container footer-inner">
             <p>&copy; 2026 XDEV Studio. All rights reserved.</p>
+            <p><a href="/privacy-policy">Privacy Policy</a></p>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-visible'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('is-visible');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+            document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+        })();
+    </script>
 </body>
 
 </html>
