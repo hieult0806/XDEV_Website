@@ -438,6 +438,29 @@ p { margin: 0; }
         top: 14px;
         right: 14px;
     }
+
+    /* Don't enlarge the icon to fill the 2x2 tile — center a sensible-sized
+       app icon on a soft gradient, App Store hero style. */
+    .game-card.featured-card .game-media {
+        background:
+            radial-gradient(ellipse 70% 60% at 30% 25%, rgba(37, 99, 235, .18), transparent 70%),
+            radial-gradient(ellipse 60% 50% at 80% 90%, rgba(139, 92, 246, .14), transparent 70%),
+            linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 100%);
+        display: grid;
+        place-items: center;
+        padding: 8%;
+    }
+    .game-card.featured-card .game-media img {
+        width: auto;
+        max-width: 62%;
+        height: auto;
+        max-height: 62%;
+        object-fit: contain;
+        border-radius: 22%;
+        box-shadow:
+            0 24px 50px -12px rgba(37, 99, 235, .35),
+            0 8px 20px -6px rgba(15, 23, 42, .15);
+    }
 }
 
 .game-media {
