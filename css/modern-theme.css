@@ -379,6 +379,65 @@ p { margin: 0; }
     border-radius: var(--radius-full);
     letter-spacing: .05em;
     box-shadow: 0 4px 12px rgba(37, 99, 235, .35);
+    z-index: 2;
+}
+
+/* Genre pill on each card */
+.genre-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, .92);
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    letter-spacing: .02em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, .08);
+    z-index: 1;
+    pointer-events: none;
+}
+@media (prefers-color-scheme: dark) {
+    .genre-tag {
+        background: rgba(15, 23, 42, .82);
+        color: var(--text);
+    }
+}
+
+/* Featured card spans 2x2 on wider screens */
+@media (min-width: 720px) {
+    .game-card-link:has(.featured-card),
+    .featured-card {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .game-card-link:has(.featured-card) .game-card,
+    .featured-card {
+        height: 100%;
+    }
+    .game-card.featured-card .game-info {
+        padding: 22px 24px;
+        gap: 10px;
+    }
+    .game-card.featured-card .game-info h3 {
+        font-size: 24px;
+        letter-spacing: -.02em;
+    }
+    .game-card.featured-card .genre-tag {
+        font-size: 12px;
+        padding: 5px 12px;
+        top: 14px;
+        left: 14px;
+    }
+    .game-card.featured-card::after {
+        font-size: 12px;
+        padding: 5px 11px;
+        top: 14px;
+        right: 14px;
+    }
 }
 
 .game-media {
