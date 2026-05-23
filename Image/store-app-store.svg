@@ -1,0 +1,41 @@
+<svg width="400" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Download on the App Store</title>
+  <desc id="desc">Neon styled App Store badge for XDEV Studio website</desc>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="8" x2="380" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1735"/>
+      <stop offset="1" stop-color="#060A16"/>
+    </linearGradient>
+    <linearGradient id="border" x1="32" y1="12" x2="368" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#55E8FF"/>
+      <stop offset="0.5" stop-color="#5D7FFF"/>
+      <stop offset="1" stop-color="#FF4FE0"/>
+    </linearGradient>
+    <linearGradient id="appleGlow" x1="20" y1="18" x2="76" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EF2FF"/>
+      <stop offset="1" stop-color="#C574FF"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.5 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="388" height="108" rx="24" fill="url(#bg)"/>
+  <rect x="6.75" y="6.75" width="386.5" height="106.5" rx="23.25" stroke="url(#border)" stroke-width="1.5"/>
+  <path d="M26 17H138L116 39H26V17Z" fill="#14214A" opacity="0.68"/>
+  <path d="M374 103H262L286 81H374V103Z" fill="#1B1038" opacity="0.58"/>
+
+  <g filter="url(#glow)" transform="translate(20 16)">
+    <path d="M41.8 7.3C45.4 2.9 51.1 0.5 56.5 0C57.2 5.7 54.9 11.4 51.4 15.4C47.9 19.3 42.5 22 37.1 21.4C36.2 16 38.6 10.9 41.8 7.3Z" fill="url(#appleGlow)"/>
+    <path d="M57.3 24.4C49.8 24 43.4 28.7 39.8 28.7C36.1 28.7 30.6 24.7 24.5 24.8C16.7 24.9 9.4 29.3 5.4 36.3C-2.8 50.6 3.3 71.8 11.2 83.1C15.1 88.6 19.7 94.7 25.8 94.5C31.5 94.3 33.7 90.8 40.6 90.8C47.5 90.8 49.5 94.5 55.5 94.4C61.8 94.3 65.8 88.9 69.6 83.3C74.1 76.8 75.9 70.6 76 70.3C75.9 70.2 63.9 65.5 63.8 51.7C63.7 40.1 73.2 34.7 73.6 34.5C68.2 26.7 59.8 24.9 57.3 24.4Z" fill="#F7FBFF"/>
+  </g>
+
+  <text x="122" y="41" fill="#B9F8FF" font-family="Orbitron, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">DOWNLOAD ON THE</text>
+  <text x="122" y="80" fill="#F3F7FF" font-family="'Space Grotesk', 'Segoe UI', Arial, sans-serif" font-size="35" font-weight="500">App Store</text>
+</svg>

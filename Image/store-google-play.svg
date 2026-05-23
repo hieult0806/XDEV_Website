@@ -1,0 +1,56 @@
+<svg width="400" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Get it on Google Play</title>
+  <desc id="desc">Neon styled Google Play badge for XDEV Studio website</desc>
+  <defs>
+    <linearGradient id="bg" x1="22" y1="10" x2="378" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101B3C"/>
+      <stop offset="1" stop-color="#070B18"/>
+    </linearGradient>
+    <linearGradient id="border" x1="34" y1="16" x2="366" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4DE5FF"/>
+      <stop offset="0.55" stop-color="#588BFF"/>
+      <stop offset="1" stop-color="#EC31FF"/>
+    </linearGradient>
+    <linearGradient id="playA" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#5EF7FF"/>
+      <stop offset="1" stop-color="#36C8FF"/>
+    </linearGradient>
+    <linearGradient id="playB" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#A7FF67"/>
+      <stop offset="1" stop-color="#6AE39D"/>
+    </linearGradient>
+    <linearGradient id="playC" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFDD5C"/>
+      <stop offset="1" stop-color="#FF8A4C"/>
+    </linearGradient>
+    <linearGradient id="playD" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FF69D9"/>
+      <stop offset="1" stop-color="#A55BFF"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.55 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="388" height="108" rx="24" fill="url(#bg)"/>
+  <rect x="6.75" y="6.75" width="386.5" height="106.5" rx="23.25" stroke="url(#border)" stroke-width="1.5"/>
+  <path d="M28 19H132L112 39H28V19Z" fill="#12214A" opacity="0.7"/>
+  <path d="M372 101H268L288 81H372V101Z" fill="#1A0F34" opacity="0.6"/>
+  <path d="M0 0H400V120H0V0Z" fill="url(#bg)" opacity="0.03"/>
+
+  <g filter="url(#glow)" transform="translate(26 25)">
+    <path d="M0 0L0 68L33 34L0 0Z" fill="url(#playA)"/>
+    <path d="M0 0L33 34L55 20L0 0Z" fill="url(#playB)"/>
+    <path d="M0 68L33 34L55 48L0 68Z" fill="url(#playD)"/>
+    <path d="M55 20L33 34L55 48L72 34L55 20Z" fill="url(#playC)"/>
+  </g>
+
+  <text x="118" y="41" fill="#B9F8FF" font-family="Orbitron, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2.4">GET IT ON</text>
+  <text x="118" y="80" fill="#F3F7FF" font-family="'Space Grotesk', 'Segoe UI', Arial, sans-serif" font-size="34" font-weight="500">Google Play</text>
+</svg>
