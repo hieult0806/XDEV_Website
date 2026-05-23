@@ -595,8 +595,6 @@ p {
 .hero-logo-wrap {
     position: relative;
     min-height: 340px;
-    display: grid;
-    place-items: center;
     border-radius: 28px;
     background:
         radial-gradient(circle at 50% 18%, rgba(55, 223, 255, 0.18), transparent 32%),
@@ -623,19 +621,63 @@ p {
     clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%);
 }
 
-.floating-logo {
-    position: relative;
-    z-index: 1;
-    width: min(100%, 360px);
-    filter:
-        drop-shadow(0 22px 32px rgba(0, 0, 0, 0.45))
-        drop-shadow(0 0 40px rgba(66, 113, 255, 0.24))
-        drop-shadow(0 0 26px rgba(236, 49, 255, 0.16));
-    animation: float 7s ease-in-out infinite;
+.escape-visual-stage {
+    padding: 18px;
 }
 
-.app-icon {
-    border-radius: 22%;
+.hero-feature-art {
+    position: absolute;
+    inset: 18px;
+    width: calc(100% - 36px);
+    height: calc(100% - 36px);
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow:
+        0 22px 42px rgba(2, 7, 19, 0.42),
+        0 0 34px rgba(77, 221, 255, 0.12);
+}
+
+.hero-floating-card {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    width: min(43%, 210px);
+    padding: 10px;
+    border-radius: 24px;
+    box-shadow:
+        0 20px 40px rgba(1, 5, 16, 0.46),
+        0 0 24px rgba(77, 221, 255, 0.14);
+}
+
+.hero-secondary-art {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 14px 28px rgba(1, 6, 18, 0.34);
+}
+
+.hero-floating-card-copy {
+    display: grid;
+    gap: 4px;
+    margin-top: 10px;
+}
+
+.hero-floating-card-copy span {
+    color: #b7f7ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-floating-card-copy strong {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .hero-showcase-copy {
@@ -794,6 +836,16 @@ p {
     box-shadow:
         0 24px 50px -12px rgba(37, 99, 235, 0.35),
         0 8px 20px -6px rgba(15, 23, 42, 0.15);
+}
+
+.featured-card .game-media img.featured-game-art {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .genre-tag {
@@ -1121,16 +1173,6 @@ p {
     font-size: 12px;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
 @media (min-width: 900px) {
     .featured-link {
         grid-column: span 2;
@@ -1285,9 +1327,6 @@ p {
         transition: none;
     }
 
-    .floating-logo {
-        animation: none;
-    }
 }
 
 @media print {
