@@ -356,12 +356,14 @@ p {
     position: relative;
     isolation: isolate;
     min-height: 44px;
-    padding: 10px 20px 12px;
+    gap: 8px;
+    padding: 8px 20px 12px 14px;
     margin-left: 8px;
     border-radius: 16px;
     border-color: rgba(151, 223, 255, 0.42);
     background: linear-gradient(180deg, #7af3ff 0%, #5c9dff 24%, #615dff 56%, #bb3eff 100%);
     color: #ffffff;
+    overflow: visible;
     font-family: var(--font-display);
     font-size: 12px;
     letter-spacing: 0.14em;
@@ -371,6 +373,28 @@ p {
         0 20px 36px rgba(35, 21, 96, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.58),
         inset 0 -10px 14px rgba(73, 21, 142, 0.4);
+}
+
+.main-nav .nav-cta > span {
+    position: relative;
+    z-index: 1;
+}
+
+.main-nav .nav-cta-icon {
+    width: 40px;
+    height: 27px;
+    flex: none;
+    margin-left: -4px;
+    background: url("../Image/contact-controller-3d.png") center / contain no-repeat;
+    filter:
+        drop-shadow(0 10px 14px rgba(14, 18, 54, 0.38))
+        drop-shadow(0 0 14px rgba(84, 172, 255, 0.34));
+    transform: translateY(-2px) rotate(-12deg);
+    transition: transform var(--transition), filter var(--transition);
+}
+
+.main-nav .nav-cta-label {
+    white-space: nowrap;
 }
 
 .main-nav .nav-cta::before,
@@ -407,6 +431,13 @@ p {
         inset 0 -10px 14px rgba(90, 26, 170, 0.42);
 }
 
+.main-nav .nav-cta:hover .nav-cta-icon {
+    transform: translateY(-5px) rotate(-16deg) scale(1.05);
+    filter:
+        drop-shadow(0 14px 18px rgba(16, 20, 58, 0.44))
+        drop-shadow(0 0 18px rgba(118, 110, 255, 0.4));
+}
+
 .main-nav .nav-cta:active {
     transform: translateY(5px);
     box-shadow:
@@ -414,6 +445,10 @@ p {
         0 12px 22px rgba(22, 14, 60, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.48),
         inset 0 -6px 10px rgba(54, 17, 110, 0.36);
+}
+
+.main-nav .nav-cta:active .nav-cta-icon {
+    transform: translateY(1px) rotate(-8deg) scale(0.98);
 }
 
 .main-nav .nav-cta:focus-visible {
@@ -1172,6 +1207,17 @@ p {
         margin: 0;
         width: 100%;
         justify-content: center;
+    }
+
+    .main-nav .nav-cta {
+        padding-left: 18px;
+    }
+
+    .main-nav .nav-cta-icon {
+        width: 36px;
+        height: 24px;
+        margin-left: 0;
+        transform: translateY(-1px) rotate(-10deg);
     }
 
     .hero-copy h1,
